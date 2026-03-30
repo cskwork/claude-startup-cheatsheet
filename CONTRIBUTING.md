@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in improving claude-code-cheatsheet!
+Thanks for your interest in improving claude-startup-cheatsheet!
 
 ## How to Contribute
 

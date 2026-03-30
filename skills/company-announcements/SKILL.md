@@ -1,4 +1,18 @@
-# Company Announcements Skill
+---
+name: company-announcements
+description: Configure companyAnnouncements in settings.json with workflow cheat sheets. Auto-detects your harness (ECC, OMCC, vanilla) and displays workflow reminders at session start.
+origin: claude-startup-cheatsheet
+---
+
+# Company Announcements
+
+## When to Activate
+
+- User asks to set up or configure session-start workflow reminders
+- User mentions `companyAnnouncements` or `settings.json` workflow configuration
+- User wants to see available slash commands as banners
+- User installs a new harness (ECC, OMCC) and needs workflow cheat sheets
+- User runs `/setup-announcements`
 
 Configure `companyAnnouncements` in `~/.claude/settings.json` with workflow cheat sheets tailored to your installed harness and commands.
 
