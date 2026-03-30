@@ -34,10 +34,9 @@ This skill writes compact workflow cheat sheets into your `companyAnnouncements`
 
 ```bash
 git clone https://github.com/cskwork/claude-startup-cheatsheet.git /tmp/cc-cheatsheet && \
-  cp -r /tmp/cc-cheatsheet/skills/company-announcements ~/.claude/skills/ && \
-  cp /tmp/cc-cheatsheet/commands/setup-announcements.md ~/.claude/commands/ && \
+  cp -r /tmp/cc-cheatsheet/skills/claude-startup-config ~/.claude/skills/ && \
   rm -rf /tmp/cc-cheatsheet && \
-  echo "Done. Run /setup-announcements in Claude Code."
+  echo "Done. Run /claude-startup-config in Claude Code."
 ```
 
 **Manual:**
@@ -46,22 +45,21 @@ git clone https://github.com/cskwork/claude-startup-cheatsheet.git /tmp/cc-cheat
 # 1. Clone
 git clone https://github.com/cskwork/claude-startup-cheatsheet.git
 
-# 2. Copy skill + command
-cp -r claude-startup-cheatsheet/skills/company-announcements ~/.claude/skills/
-cp claude-startup-cheatsheet/commands/setup-announcements.md ~/.claude/commands/
+# 2. Copy skill
+cp -r claude-startup-cheatsheet/skills/claude-startup-config ~/.claude/skills/
 
 # 3. Run in Claude Code
-/setup-announcements
+/claude-startup-config
 ```
 
 ## Usage
 
 ```
-/setup-announcements                      # Auto-detect your harness
-/setup-announcements --harness ecc        # Everything Claude Code preset
-/setup-announcements --harness omcc       # Oh My Claude Code preset
-/setup-announcements --harness minimal    # Vanilla Claude Code
-/setup-announcements --harness custom     # Pick your own categories
+/claude-startup-config                      # Auto-detect your harness
+/claude-startup-config --harness ecc        # Everything Claude Code preset
+/claude-startup-config --harness omcc       # Oh My Claude Code preset
+/claude-startup-config --harness minimal    # Vanilla Claude Code
+/claude-startup-config --harness custom     # Pick your own categories
 ```
 
 The command scans your installed commands, detects which harness you're running, and writes the appropriate `companyAnnouncements` to `~/.claude/settings.json`. It shows you a before/after diff so you know exactly what changed.
@@ -122,7 +120,7 @@ The command scans your installed commands, detects which harness you're running,
 ## How It Works
 
 ```
-/setup-announcements
+/claude-startup-config
         |
         v
   Scan ~/.claude/commands/
@@ -160,7 +158,7 @@ The command scans your installed commands, detects which harness you're running,
 
 ## Adding Your Own Harness
 
-Create a template file at `skills/company-announcements/templates/{name}.json`:
+Create a template file at `skills/claude-startup-config/templates/{name}.json`:
 
 ```json
 {
@@ -187,10 +185,10 @@ A: The command shows you a before/after diff and asks for confirmation before wr
 A: Use `--harness custom` to pick categories from both, or run auto-detect which will prefer the harness with more installed commands.
 
 **Q: Can I add custom lines alongside the generated ones?**
-A: Yes. After running `/setup-announcements`, manually edit `~/.claude/settings.json` to add your own lines to the array. Re-running the command will replace the generated lines but you can use `--harness custom` to include your additions.
+A: Yes. After running `/claude-startup-config`, manually edit `~/.claude/settings.json` to add your own lines to the array. Re-running the command will replace the generated lines but you can use `--harness custom` to include your additions.
 
 **Q: How do I update after installing new commands?**
-A: Just run `/setup-announcements` again. It re-scans your installed commands each time.
+A: Just run `/claude-startup-config` again. It re-scans your installed commands each time.
 
 ## Contributing
 

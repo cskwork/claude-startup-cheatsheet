@@ -6,7 +6,7 @@ Thanks for your interest in improving claude-startup-cheatsheet!
 
 ### Adding a Harness Template
 
-1. Create `skills/company-announcements/templates/{harness-name}.json`
+1. Create `skills/claude-startup-config/templates/{harness-name}.json`
 2. Follow this format:
 
 ```json
@@ -21,7 +21,7 @@ Thanks for your interest in improving claude-startup-cheatsheet!
 
 3. Keep lines under ~120 characters
 4. Use `->` for sequential steps, `,` for alternatives, `|` for sub-categories
-5. Add the harness to the command's detection logic in `commands/setup-announcements.md`
+5. Add the harness to the detection logic in `skills/claude-startup-config/SKILL.md`
 6. Submit a PR with a brief description of the harness
 
 ### Improving Existing Templates
