@@ -18,7 +18,7 @@ Configure `companyAnnouncements` in `~/.claude/settings.json` with workflow chea
 
 ## What It Does
 
-1. **Detects** installed slash commands in `~/.claude/commands/` and project `.claude/commands/`
+1. **Detects** installed slash commands in `~/.claude/commands/`, `~/.claude/skills/*/`, and project `.claude/commands/`
 2. **Categorizes** them into workflow chains (dev, debug, docs, learning, etc.)
 3. **Generates** a `companyAnnouncements` block for `settings.json`
 4. Cross-platform: macOS, Windows, Linux compatible

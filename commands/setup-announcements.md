@@ -36,6 +36,9 @@ Scan for installed commands and detect which harness is active:
 # Global commands
 ls ~/.claude/commands/*.md 2>/dev/null | xargs -I{} basename {} .md | sort
 
+# Global skills (also exposed as slash commands)
+ls -d ~/.claude/skills/*/SKILL.md 2>/dev/null | xargs -I{} dirname {} | xargs -I{} basename {} | sort
+
 # Project commands (if in git repo)
 ls .claude/commands/*.md 2>/dev/null | xargs -I{} basename {} .md | sort
 
