@@ -20,7 +20,7 @@ You installed 60+ slash commands from ECC, Oh My Claude Code, or other harnesses
 
 ## The Solution
 
-This skill writes compact workflow cheat sheets into your `companyAnnouncements` setting. They show up **automatically at every session start** -- zero effort, always visible.
+This skill writes compact workflow cheat sheets into your `companyAnnouncements` setting. The setting provides startup announcement text. With multiple entries, a displayed item need not contain every workflow; this does not establish model-internal ingestion or automatic command recommendations.
 
 ```
 [Workflows] Dev: /orchestrate feature "desc" -> /e2e | Manual: /plan -> /tdd -> /code-review -> /verify
@@ -179,7 +179,7 @@ Works identically on macOS, Windows, and Linux. All slash commands use forward s
 ## FAQ
 
 **Q: Will this overwrite my existing companyAnnouncements?**
-A: The command shows you a before/after diff and asks for confirmation before writing. Your old announcements are displayed as AS-IS so you can compare.
+A: The command updates the requested workflow announcements, preserves unrelated text and settings, backs up the file, and shows the before/after result. It reuses authorization already given for that scope.
 
 **Q: What if I use both ECC and OMCC?**
 A: Use `--harness custom` to pick categories from both, or run auto-detect which will prefer the harness with more installed commands.

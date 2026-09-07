@@ -185,7 +185,7 @@ npm list -g oh-my-claude-sisyphus 2>/dev/null
 | Release | release | `/oh-my-claudecode:release` |
 | Diagnostics | omc-doctor | `/oh-my-claudecode:omc-doctor` |
 
-Only include categories where at least one required command/plugin exists.
+For auto-detection, include only commands and keywords verified in the active installation. Do not include an entire chain merely because one command exists. Named presets are examples; report any unverified command before including it.
 
 ### Step 3: Interactive Custom Mode
 
@@ -204,8 +204,8 @@ Build a JSON array where each entry is one workflow category line:
 ### Step 5: Apply to settings.json
 
 1. Read `~/.claude/settings.json`
-2. Replace the `companyAnnouncements` array (or add it if missing)
-3. Write back with proper JSON formatting (2-space indent)
+2. Update only the requested workflow announcements; preserve unrelated existing announcements and all other settings keys
+3. Back up the existing file, write valid JSON (2-space indent), and parse it again to confirm the update
 4. Show the user the before (AS-IS) and after (TO-BE) diff
 
 ### Step 6: Show Project Commands (if any)
